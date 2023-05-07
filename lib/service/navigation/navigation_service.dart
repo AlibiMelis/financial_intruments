@@ -20,8 +20,8 @@ class NavigationService extends BaseNavigation {
 
   @override
   bool pop() {
-    if (Keys.navigationKey.currentState!.canPop()) {
-      Keys.navigationKey.currentState!.pop();
+    if (Keys.customNavigationKey.currentState!.canPop()) {
+      Keys.customNavigationKey.currentState!.pop();
       return true;
     }
     return false;

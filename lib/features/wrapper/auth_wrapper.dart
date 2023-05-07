@@ -1,20 +1,17 @@
-import 'package:financial_instruments/features/login/login_page.dart';
-import 'package:financial_instruments/features/wrapper/nav_wrapper.dart';
-import 'package:financial_instruments/service/authentication/authentication.dart';
+import 'package:financial_instruments/global/keys.dart';
+import 'package:financial_instruments/service/navigation/router_global.dart';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AuthWrapper extends StatelessWidget {
   const AuthWrapper({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<AuthenticationCubit, MainUser?>(
-      builder: (context, mainUser) {
-        if (mainUser == null) return const LoginPage();
-        return const NavWrapper();
-      },
+    return Navigator(
+      key: Keys.globalNavigationKey,
+      initialRoute: 'login',
+      onGenerateRoute: RouterGlobal.generateRoute,
     );
   }
 }

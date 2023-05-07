@@ -63,6 +63,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '974364023302',
     projectId: 'financial-instruments-2e9c0',
     storageBucket: 'financial-instruments-2e9c0.appspot.com',
+    androidClientId: '974364023302-640gocr5o8urov30a1jmejkh3dbo9u6l.apps.googleusercontent.com',
     iosClientId: '974364023302-pl69vlgd2u0j60f2qcr62t4gnj56s79k.apps.googleusercontent.com',
     iosBundleId: 'com.example.financialInstruments',
   );

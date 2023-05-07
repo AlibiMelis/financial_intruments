@@ -1,5 +1,6 @@
 import 'package:financial_instruments/features/wrapper/auth_wrapper.dart';
 import 'package:financial_instruments/service/authentication/cubit/authentication_cubit.dart';
+import 'package:financial_instruments/service/authentication/repository/authentication_repo.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -12,7 +13,7 @@ class App extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: MultiBlocProvider(
         providers: [
-          BlocProvider<AuthenticationCubit>(create: (context) => AuthenticationCubit()),
+          BlocProvider<AuthenticationCubit>(create: (context) => AuthenticationCubit(repository: AuthenticationRepositoryImpl())),
         ],
         child: const AuthWrapper(),
       ),
