@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "974364023302",
+    "project_id": "financial-instruments-2e9c0",
+    "storage_bucket": "financial-instruments-2e9c0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:974364023302:android:d4839ff684bff4940d0187",
+        "android_client_info": {
+          "package_name": "com.example.financial_instruments"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "974364023302-ae85ui96hcm3j16h59n0i8te4p1c74a4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_Ip4aLEoX58S9PO_Eboe8SHLHaO32H0M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "974364023302-ae85ui96hcm3j16h59n0i8te4p1c74a4.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "974364023302-hd0e5jf7lkvhpfs97vdt9f80tkd7vcuf.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.alibi.financial-instrument"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
