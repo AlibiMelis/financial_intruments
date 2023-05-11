@@ -6,6 +6,8 @@ part 'watchlist_state.dart';
 
 abstract class WatchlistCubit extends Cubit<WatchlistState> {
   WatchlistCubit(super.initialState);
+
+  Future<void> fetchData();
 }
 
 class WatchlistCubitImpl extends WatchlistCubit {
@@ -13,4 +15,11 @@ class WatchlistCubitImpl extends WatchlistCubit {
 
   final WatchlistRepository repository;
   
+  @override
+  Future<void> fetchData() async {
+    final data = await repository.fetchWatchlistData('MQVNq3cwT9f6XbYqnpPU9xNodZ22');
+    if (data.object != null) {
+      print(data.object);
+    }
+  }
 }

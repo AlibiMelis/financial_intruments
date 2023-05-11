@@ -19,7 +19,7 @@ class StockDataPoint {
   @HiveField(4, defaultValue: 0.0)
   final double close;
   @JsonKey(name: '5. volume', defaultValue: 0)
-  @HiveField(5, defaultValue: 0.0)
+  @HiveField(5, defaultValue: 0)
   final int volume;
 
   const StockDataPoint({
@@ -33,3 +33,9 @@ class StockDataPoint {
   factory StockDataPoint.fromJson(Map<String, dynamic> json) => _$StockDataPointFromJson(json);
   Map<String, dynamic> toJson() => _$StockDataPointToJson(this);
 }
+
+      // open: double.tryParse(json['1. open'] as String? ?? '0.0') ?? 0.0,
+      // high: double.tryParse(json['2. high'] as String? ?? '0.0') ?? 0.0,
+      // low: double.tryParse(json['3. low'] as String? ?? '0.0') ?? 0.0,
+      // close: double.tryParse(json['4. close'] as String? ?? '0.0') ?? 0.0,
+      // volume: int.tryParse(json['5. volume'] as String? ?? '0') ?? 0,

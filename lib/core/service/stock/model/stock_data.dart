@@ -9,10 +9,10 @@ part 'stock_data.g.dart';
 @HiveType(typeId: 3, adapterName: 'StockDataAdapter')
 class StockData {
   @JsonKey(name: 'Meta Data', defaultValue: null)
-  @HiveField(11, defaultValue: null)
+  @HiveField(1, defaultValue: null)
   final StockMetaData? metaData;
   @JsonKey(name: 'Time Series (5min)', defaultValue: <String, StockDataPoint>{})
-  @HiveField(11, defaultValue: null)
+  @HiveField(2, defaultValue: null)
   final Map<String, StockDataPoint> timeSeries;
 
   const StockData({

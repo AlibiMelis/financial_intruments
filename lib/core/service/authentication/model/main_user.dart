@@ -4,6 +4,7 @@ import 'package:json_annotation/json_annotation.dart';
 part 'main_user.g.dart';
 
 @JsonSerializable()
+@HiveType(typeId: 4, adapterName: 'MainUserAdapter')
 class MainUser {
   @HiveField(1, defaultValue: '')
   final String phoneNumber;

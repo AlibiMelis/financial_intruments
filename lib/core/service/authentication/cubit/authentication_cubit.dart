@@ -4,17 +4,28 @@ import 'package:financial_instruments/core/service/authentication/model/main_use
 import 'package:financial_instruments/core/service/authentication/repository/authentication_repo.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-abstract class BaseAuthentication<T> extends Cubit<T> {
+abstract class BaseAuthentication extends Cubit<MainUser?> {
   BaseAuthentication(super.initialState);
 
+  Future<void> init();
   Future<void> sendOTP(String phoneNo);
   Future<bool> verfiyOTP(String otp);
+  // Future<void> fetchUserData();
 }
 
-class AuthenticationCubit extends BaseAuthentication<MainUser?> {
+class AuthenticationCubit extends BaseAuthentication {
   final AuthenticationRepository repository;
 
   AuthenticationCubit({required this.repository}) : super(null);
+
+  @override
+  Future<void> init() async {
+    final data = await repository.getUser();
+    if (data.object != null) {
+      final mainUser = data.object! as MainUser;
+      emit(mainUser);
+    }
+  }
 
   @override
   Future<void> sendOTP(String phoneNo) async {
@@ -32,4 +43,9 @@ class AuthenticationCubit extends BaseAuthentication<MainUser?> {
     }
     return false;
   }
+  
+  // @override
+  // Future<void> fetchUserData() async {
+  //   final data = 
+  // }
 }
