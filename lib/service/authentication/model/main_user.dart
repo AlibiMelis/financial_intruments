@@ -13,6 +13,5 @@ class MainUser {
   const MainUser({this.phoneNumber = '', this.uid = ''});
 
   factory MainUser.fromJson(Map<String, dynamic> json) => _$MainUserFromJson(json);
-
   Map<String, dynamic> toJson() => _$MainUserToJson(this);
 }

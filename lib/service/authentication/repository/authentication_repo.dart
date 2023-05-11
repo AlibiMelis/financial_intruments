@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:financial_instruments/service/authentication/authentication.dart';
 import 'package:financial_instruments/service/model/app_response.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -14,7 +16,7 @@ class AuthenticationRepositoryImpl extends AuthenticationRepository {
 
   @override
   Future<AppResponse> sendOTP(String phoneNo) async {
-    bool success = false;
+    // final bool success = false;
     await _auth.verifyPhoneNumber(
       phoneNumber: phoneNo,
       verificationCompleted: (credential) async {
@@ -29,13 +31,12 @@ class AuthenticationRepositoryImpl extends AuthenticationRepository {
       verificationFailed: (error) {
         // TODO: snackbar with error if error
         if (error.code == 'invalid-phone-number') {
-          print("ERROR: invalid phone number");
+          log("ERROR: invalid phone number");
         } else {
-          print("ERROR: $error");
+          log("ERROR: $error");
         }
       },
     );
-    print("ALIBI: verfication over");
     return AppResponse.success(null);
   }
 
@@ -48,7 +49,7 @@ class AuthenticationRepositoryImpl extends AuthenticationRepository {
       final mainUser = MainUser(phoneNumber: user?.phoneNumber ?? '', uid: user?.uid ?? '');
       return AppResponse.success(mainUser);
     } on Exception catch (e) {
-      print("ALIBI: verification error: $e");
+      log("ERROR: verification error: $e");
       return AppResponse.withError(e.toString());
     }
   }

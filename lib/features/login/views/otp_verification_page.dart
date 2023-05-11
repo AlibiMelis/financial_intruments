@@ -8,7 +8,6 @@ class OTPVerificationPage extends StatelessWidget {
   const OTPVerificationPage({super.key});
 
   Future<void> _onOTPSubmit(BuildContext context, String otp) async {
-    print("ALIBI: otp: $otp");
     final success = await context.bloc<AuthenticationCubit>().verfiyOTP(otp);
     if (success) {
       Keys.globalNavigationKey.currentState?.pushNamedAndRemoveUntil('dashboard', (route) => false);
