@@ -1,6 +1,6 @@
-import 'package:financial_instruments/global/constants.dart';
-import 'package:financial_instruments/service/mixins/api_provider_mixin.dart';
-import 'package:financial_instruments/service/stock/model/stock_data.dart';
+import 'package:financial_instruments/core/global/constants.dart';
+import 'package:financial_instruments/core/service/mixins/api_provider_mixin.dart';
+import 'package:financial_instruments/core/service/stock/model/stock_data.dart';
 
 abstract class StockApiProvider<T> {
   Future<T> fetchData(String symbol);

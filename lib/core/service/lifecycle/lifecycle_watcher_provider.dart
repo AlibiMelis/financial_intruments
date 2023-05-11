@@ -1,6 +1,6 @@
-import 'package:financial_instruments/service/lifecycle/lifecycle_watcher.dart';
-import 'package:financial_instruments/service/stock/cubit/stock_cubit.dart';
-import 'package:financial_instruments/service/stock/injections/repository_di.dart';
+import 'package:financial_instruments/core/service/lifecycle/lifecycle_watcher.dart';
+import 'package:financial_instruments/core/service/stock/cubit/stock_cubit.dart';
+import 'package:financial_instruments/core/service/stock/injections/repository_di.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

@@ -1,5 +1,5 @@
-import 'package:financial_instruments/service/stock/cubit/stock_cubit.dart';
-import 'package:financial_instruments/utils/extensions.dart';
+import 'package:financial_instruments/core/service/stock/cubit/stock_cubit.dart';
+import 'package:financial_instruments/core/utils/extensions.dart';
 import 'package:flutter/material.dart';
 
 class LifecycleWatcher extends StatefulWidget {

@@ -1,7 +1,7 @@
 import 'dart:developer';
 
-import 'package:financial_instruments/service/authentication/authentication.dart';
-import 'package:financial_instruments/service/model/app_response.dart';
+import 'package:financial_instruments/core/service/authentication/authentication.dart';
+import 'package:financial_instruments/core/service/model/app_response.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 abstract class AuthenticationRepository {

@@ -1,4 +1,4 @@
-import 'package:financial_instruments/service/stock/providers/api_provider.dart';
+import 'package:financial_instruments/core/service/stock/providers/api_provider.dart';
 
 class StockApiProviderInject {
   static StockApiProvider? _stockApiProvider;

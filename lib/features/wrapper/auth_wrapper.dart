@@ -1,5 +1,5 @@
-import 'package:financial_instruments/global/keys.dart';
-import 'package:financial_instruments/service/navigation/router_global.dart';
+import 'package:financial_instruments/core/global/keys.dart';
+import 'package:financial_instruments/core/service/navigation/router_global.dart';
 
 import 'package:flutter/material.dart';
 

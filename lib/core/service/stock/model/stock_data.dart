@@ -1,5 +1,5 @@
-import 'package:financial_instruments/service/stock/model/stock_data_point.dart';
-import 'package:financial_instruments/service/stock/model/stock_meta_data.dart';
+import 'package:financial_instruments/core/service/stock/model/stock_data_point.dart';
+import 'package:financial_instruments/core/service/stock/model/stock_meta_data.dart';
 import 'package:hive/hive.dart';
 import 'package:json_annotation/json_annotation.dart';
 
