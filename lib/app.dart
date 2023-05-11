@@ -24,6 +24,7 @@ class _AppState extends State<App> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(fontFamily: 'NotoSans'),
       home: MultiBlocProvider(
         providers: [
           BlocProvider<BaseAuthentication>(create: (context) => AuthenticationCubit(repository: AuthenticationRepositoryInject.authenticationRepository())),

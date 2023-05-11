@@ -17,7 +17,7 @@ class StockCubitImpl extends StockCubit {
 
   @override
   Future<void> fetchStockData() async {
-    const symbol = 'IBM';
+    const symbol = 'PLTR';
     final data = await repository.fetchStockData(symbol);
     if (data.object != null) {
       final stockData = data.object! as StockData;

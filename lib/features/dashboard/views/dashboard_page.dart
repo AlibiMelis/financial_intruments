@@ -43,6 +43,7 @@ class _DashboardPageState extends State<DashboardPage> with TickerProviderStateM
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColor.globalBackground,
       body: Navigator(
         key: Keys.customNavigationKey,
         initialRoute: 'dashboard',
@@ -52,20 +53,23 @@ class _DashboardPageState extends State<DashboardPage> with TickerProviderStateM
         },
         observers: [_observer],
       ),
-      bottomNavigationBar: TabBar(
-        onTap: (tab) {
-          context.bloc<BaseNavigation>().navigateTo(_tabs[tab]);
-        },
-        controller: _tabController,
-        tabs: [
-          for (final tab in _tabs) Tab(text: tab.toUpperCase()),
-        ],
-        // labelStyle:
-        labelColor: AppColor.bottomNavSelectedTab,
-        unselectedLabelColor: AppColor.bottomNavUnselectedTab,
-        indicatorSize: TabBarIndicatorSize.tab,
-        indicator: const BoxDecoration(
-          // color:
+      bottomNavigationBar: Container(
+        color: AppColor.globalBottomNavBackground,
+        child: TabBar(
+          onTap: (tab) {
+            context.bloc<BaseNavigation>().navigateTo(_tabs[tab]);
+          },
+          controller: _tabController,
+          tabs: [
+            for (final tab in _tabs) Tab(text: tab.toUpperCase()),
+          ],
+          // labelStyle:
+          labelColor: AppColor.bottomNavSelectedTab,
+          unselectedLabelColor: AppColor.bottomNavUnselectedTab,
+          indicatorSize: TabBarIndicatorSize.tab,
+          indicator: const BoxDecoration(
+            // color: Colors.white,
+          ),
         ),
       ),
     );

@@ -29,7 +29,7 @@ class _AuthWrapperState extends State<AuthWrapper> {
   Widget build(BuildContext context) {
     return Navigator(
       key: Keys.globalNavigationKey,
-      initialRoute: 'login',
+      initialRoute: 'dashboard',
       onGenerateRoute: RouterGlobal.generateRoute,
     );
   }

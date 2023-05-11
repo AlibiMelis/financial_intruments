@@ -8,3 +8,12 @@ abstract class WatchlistState extends Equatable {
 }
 
 class WatchlistInitial extends WatchlistState {}
+
+class WatchlistLoaded extends WatchlistState {
+  final Watchlist watchlist;
+
+  const WatchlistLoaded({required this.watchlist});
+
+  @override
+  List<Object> get props => [watchlist];
+}
