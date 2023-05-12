@@ -20,15 +20,16 @@ class StockMetaDataAdapter extends TypeAdapter<StockMetaData> {
       information: fields[1] == null ? '' : fields[1] as String,
       symbol: fields[2] == null ? '' : fields[2] as String,
       lastRefreshed: fields[3] as DateTime?,
-      outputSize: fields[4] == null ? '' : fields[4] as String,
-      timeZone: fields[5] == null ? '' : fields[5] as String,
+      interval: fields[4] == null ? '' : fields[4] as String,
+      outputSize: fields[5] == null ? '' : fields[5] as String,
+      timeZone: fields[6] == null ? '' : fields[6] as String,
     );
   }
 
   @override
   void write(BinaryWriter writer, StockMetaData obj) {
     writer
-      ..writeByte(5)
+      ..writeByte(6)
       ..writeByte(1)
       ..write(obj.information)
       ..writeByte(2)
@@ -36,8 +37,10 @@ class StockMetaDataAdapter extends TypeAdapter<StockMetaData> {
       ..writeByte(3)
       ..write(obj.lastRefreshed)
       ..writeByte(4)
-      ..write(obj.outputSize)
+      ..write(obj.interval)
       ..writeByte(5)
+      ..write(obj.outputSize)
+      ..writeByte(6)
       ..write(obj.timeZone);
   }
 
@@ -63,8 +66,9 @@ StockMetaData _$StockMetaDataFromJson(Map<String, dynamic> json) =>
       lastRefreshed: json['3. Last Refreshed'] == null
           ? null
           : DateTime.parse(json['3. Last Refreshed'] as String),
-      outputSize: json['4. Output Size'] as String? ?? '',
-      timeZone: json['5. Time Zone'] as String? ?? '',
+      interval: json['4. Interval'] as String? ?? '',
+      outputSize: json['5. Output Size'] as String? ?? '',
+      timeZone: json['6. Time Zone'] as String? ?? '',
     );
 
 Map<String, dynamic> _$StockMetaDataToJson(StockMetaData instance) =>
@@ -72,6 +76,7 @@ Map<String, dynamic> _$StockMetaDataToJson(StockMetaData instance) =>
       '1. Information': instance.information,
       '2. Symbol': instance.symbol,
       '3. Last Refreshed': instance.lastRefreshed?.toIso8601String(),
-      '4. Output Size': instance.outputSize,
-      '5. Time Zone': instance.timeZone,
+      '4. Interval': instance.interval,
+      '5. Output Size': instance.outputSize,
+      '6. Time Zone': instance.timeZone,
     };

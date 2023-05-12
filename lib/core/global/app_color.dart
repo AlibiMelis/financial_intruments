@@ -13,4 +13,7 @@ class AppColor {
 
   // WATCHLIST
   static const watchlistItemBackground = Colors.white;
+  static const star = Colors.orange;
+  static const profit = Colors.green;
+  static const loss = Colors.red;
 }

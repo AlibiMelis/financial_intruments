@@ -7,4 +7,9 @@ class AppTextStyle {
     fontSize: 32,
     fontWeight: FontWeight.bold,
   );
+  static const TextStyle sectionHeader = TextStyle(
+    color: AppColor.pageHeaderText,
+    fontSize: 20,
+    fontWeight: FontWeight.bold,
+  );
 }

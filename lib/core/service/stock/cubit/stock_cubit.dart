@@ -1,4 +1,5 @@
 import 'package:equatable/equatable.dart';
+import 'package:financial_instruments/core/global/constants.dart';
 import 'package:financial_instruments/core/service/stock/model/stock_data.dart';
 import 'package:financial_instruments/core/service/stock/repository/stock_repo.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -17,10 +18,10 @@ class StockCubitImpl extends StockCubit {
 
   @override
   Future<void> fetchStockData() async {
-    const symbol = 'PLTR';
-    final data = await repository.fetchStockData(symbol);
+    
+    final data = await repository.fetchStockData(symbols);
     if (data.object != null) {
-      final stockData = data.object! as StockData;
+      final stockData = data.object! as Map<String, StockData>;
       emit(StockLoaded(data: stockData));
     }
   }

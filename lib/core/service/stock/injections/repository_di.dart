@@ -1,4 +1,5 @@
 import 'package:financial_instruments/core/service/stock/injections/api_provider_di.dart';
+import 'package:financial_instruments/core/service/stock/injections/db_provder_di.dart';
 import 'package:financial_instruments/core/service/stock/repository/stock_repo.dart';
 
 class StockRepositoryInject {
@@ -7,6 +8,9 @@ class StockRepositoryInject {
   StockRepositoryInject._();
 
   static StockRepository stockRepository() {
-    return _repository ??= StockRepositoryImpl(apiProvider: StockApiProviderInject.stockApiProvider());
+    return _repository ??= StockRepositoryImpl(
+      apiProvider: StockApiProviderInject.stockApiProvider(),
+      dbProvider: StockDBProviderInject.stockDBProvider(),
+    );
   }
 }

@@ -10,7 +10,7 @@ abstract class StockState extends Equatable {
 class StockInitial extends StockState {}
 
 class StockLoaded extends StockState {
-  final StockData data;
+  final Map<String, StockData> data;
 
   const StockLoaded({required this.data});
 

@@ -53,7 +53,7 @@ class _DashboardPageState extends State<DashboardPage> with TickerProviderStateM
         },
         observers: [_observer],
       ),
-      bottomNavigationBar: Container(
+      bottomNavigationBar: ColoredBox(
         color: AppColor.globalBottomNavBackground,
         child: TabBar(
           onTap: (tab) {

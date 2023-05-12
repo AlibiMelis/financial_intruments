@@ -15,17 +15,21 @@ class StockMetaData {
   @JsonKey(name: '3. Last Refreshed')
   @HiveField(3, defaultValue: null)
   final DateTime? lastRefreshed;
-  @JsonKey(name: '4. Output Size', defaultValue: '')
+  @JsonKey(name: '4. Interval', defaultValue: '')
   @HiveField(4, defaultValue: '')
-  final String outputSize;
-  @JsonKey(name: '5. Time Zone', defaultValue: '')
+  final String interval;
+  @JsonKey(name: '5. Output Size', defaultValue: '')
   @HiveField(5, defaultValue: '')
+  final String outputSize;
+  @JsonKey(name: '6. Time Zone', defaultValue: '')
+  @HiveField(6, defaultValue: '')
   final String timeZone;
 
   const StockMetaData({
     required this.information,
     required this.symbol,
     required this.lastRefreshed,
+    required this.interval,
     required this.outputSize,
     required this.timeZone,
   });

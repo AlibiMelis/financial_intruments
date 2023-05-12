@@ -1,3 +1,4 @@
+import 'package:financial_instruments/core/global/constants.dart';
 import 'package:financial_instruments/core/service/stock/model/stock_data_point.dart';
 import 'package:financial_instruments/core/service/stock/model/stock_meta_data.dart';
 import 'package:hive/hive.dart';
@@ -11,7 +12,7 @@ class StockData {
   @JsonKey(name: 'Meta Data', defaultValue: null)
   @HiveField(1, defaultValue: null)
   final StockMetaData? metaData;
-  @JsonKey(name: 'Time Series (5min)', defaultValue: <String, StockDataPoint>{})
+  @JsonKey(name: 'Time Series ($alphaInterval)', defaultValue: <String, StockDataPoint>{})
   @HiveField(2, defaultValue: null)
   final Map<String, StockDataPoint> timeSeries;
 

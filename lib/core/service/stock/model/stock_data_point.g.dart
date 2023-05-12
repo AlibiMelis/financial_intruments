@@ -17,11 +17,11 @@ class StockDataPointAdapter extends TypeAdapter<StockDataPoint> {
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
     return StockDataPoint(
-      open: fields[1] == null ? 0.0 : fields[1] as double,
-      high: fields[2] == null ? 0.0 : fields[2] as double,
-      low: fields[3] == null ? 0.0 : fields[3] as double,
-      close: fields[4] == null ? 0.0 : fields[4] as double,
-      volume: fields[5] == null ? 0 : fields[5] as int,
+      openStr: fields[1] == null ? '' : fields[1] as String,
+      highStr: fields[2] == null ? '' : fields[2] as String,
+      lowStr: fields[3] == null ? '' : fields[3] as String,
+      closeStr: fields[4] == null ? '' : fields[4] as String,
+      volumeStr: fields[5] == null ? '' : fields[5] as String,
     );
   }
 
@@ -30,40 +30,46 @@ class StockDataPointAdapter extends TypeAdapter<StockDataPoint> {
     writer
       ..writeByte(5)
       ..writeByte(1)
-      ..write(obj.open)
+      ..write(obj.openStr)
       ..writeByte(2)
-      ..write(obj.high)
+      ..write(obj.highStr)
       ..writeByte(3)
-      ..write(obj.low)
+      ..write(obj.lowStr)
       ..writeByte(4)
-      ..write(obj.close)
+      ..write(obj.closeStr)
       ..writeByte(5)
-      ..write(obj.volume);
+      ..write(obj.volumeStr);
   }
 
   @override
   int get hashCode => typeId.hashCode;
 
   @override
-  bool operator ==(Object other) => identical(this, other) || other is StockDataPointAdapter && runtimeType == other.runtimeType && typeId == other.typeId;
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is StockDataPointAdapter &&
+          runtimeType == other.runtimeType &&
+          typeId == other.typeId;
 }
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-StockDataPoint _$StockDataPointFromJson(Map<String, dynamic> json) => StockDataPoint(
-      open: double.tryParse(json['1. open'] as String? ?? '0.0') ?? 0.0,
-      high: double.tryParse(json['2. high'] as String? ?? '0.0') ?? 0.0,
-      low: double.tryParse(json['3. low'] as String? ?? '0.0') ?? 0.0,
-      close: double.tryParse(json['4. close'] as String? ?? '0.0') ?? 0.0,
-      volume: int.tryParse(json['5. volume'] as String? ?? '0') ?? 0,
+StockDataPoint _$StockDataPointFromJson(Map<String, dynamic> json) =>
+    StockDataPoint(
+      openStr: json['1. open'] as String? ?? '',
+      highStr: json['2. high'] as String? ?? '',
+      lowStr: json['3. low'] as String? ?? '',
+      closeStr: json['4. close'] as String? ?? '',
+      volumeStr: json['5. volume'] as String? ?? '',
     );
 
-Map<String, dynamic> _$StockDataPointToJson(StockDataPoint instance) => <String, dynamic>{
-      '1. open': instance.open,
-      '2. high': instance.high,
-      '3. low': instance.low,
-      '4. close': instance.close,
-      '5. volume': instance.volume,
+Map<String, dynamic> _$StockDataPointToJson(StockDataPoint instance) =>
+    <String, dynamic>{
+      '1. open': instance.openStr,
+      '2. high': instance.highStr,
+      '3. low': instance.lowStr,
+      '4. close': instance.closeStr,
+      '5. volume': instance.volumeStr,
     };

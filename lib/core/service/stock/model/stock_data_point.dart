@@ -6,36 +6,37 @@ part 'stock_data_point.g.dart';
 @JsonSerializable()
 @HiveType(typeId: 1, adapterName: 'StockDataPointAdapter')
 class StockDataPoint {
-  @JsonKey(name: '1. open', defaultValue: 0.0)
-  @HiveField(1, defaultValue: 0.0)
-  final double open;
-  @JsonKey(name: '2. high', defaultValue: 0.0)
-  @HiveField(2, defaultValue: 0.0)
-  final double high;
-  @JsonKey(name: '3. low', defaultValue: 0.0)
-  @HiveField(3, defaultValue: 0.0)
-  final double low;
-  @JsonKey(name: '4. close', defaultValue: 0.0)
-  @HiveField(4, defaultValue: 0.0)
-  final double close;
-  @JsonKey(name: '5. volume', defaultValue: 0)
-  @HiveField(5, defaultValue: 0)
-  final int volume;
+  @JsonKey(name: '1. open', defaultValue: '')
+  @HiveField(1, defaultValue: '')
+  final String openStr;
+  @JsonKey(name: '2. high', defaultValue: '')
+  @HiveField(2, defaultValue: '')
+  final String highStr;
+  @JsonKey(name: '3. low', defaultValue: '')
+  @HiveField(3, defaultValue: '')
+  final String lowStr;
+  @JsonKey(name: '4. close', defaultValue: '')
+  @HiveField(4, defaultValue: '')
+  final String closeStr;
+  @JsonKey(name: '5. volume', defaultValue: '')
+  @HiveField(5, defaultValue: '')
+  final String volumeStr;
 
   const StockDataPoint({
-    required this.open,
-    required this.high,
-    required this.low,
-    required this.close,
-    required this.volume,
+    required this.openStr,
+    required this.highStr,
+    required this.lowStr,
+    required this.closeStr,
+    required this.volumeStr,
   });
+
+  double get open => double.tryParse(openStr) ?? 0.0;
+  double get high => double.tryParse(highStr) ?? 0.0;
+  double get low => double.tryParse(lowStr) ?? 0.0;
+  double get close => double.tryParse(closeStr) ?? 0.0;
+  int get volume => int.tryParse(volumeStr) ?? 0;
+
 
   factory StockDataPoint.fromJson(Map<String, dynamic> json) => _$StockDataPointFromJson(json);
   Map<String, dynamic> toJson() => _$StockDataPointToJson(this);
 }
-
-      // open: double.tryParse(json['1. open'] as String? ?? '0.0') ?? 0.0,
-      // high: double.tryParse(json['2. high'] as String? ?? '0.0') ?? 0.0,
-      // low: double.tryParse(json['3. low'] as String? ?? '0.0') ?? 0.0,
-      // close: double.tryParse(json['4. close'] as String? ?? '0.0') ?? 0.0,
-      // volume: int.tryParse(json['5. volume'] as String? ?? '0') ?? 0,
