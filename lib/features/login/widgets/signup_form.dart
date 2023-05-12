@@ -14,6 +14,7 @@ class SignUpForm extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           TextFormField(
+            decoration: const InputDecoration(hintText: 'Phone number'),
             controller: _phoneNumberController,
           ),
           ElevatedButton(
