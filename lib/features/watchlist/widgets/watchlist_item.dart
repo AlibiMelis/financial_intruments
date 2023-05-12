@@ -5,9 +5,10 @@ import 'package:financial_instruments/features/portfolio/widgets/minimized_line_
 import 'package:flutter/material.dart';
 
 class WatchlistItem extends StatelessWidget {
-  const WatchlistItem({super.key, required this.data});
+  const WatchlistItem({super.key, required this.data, this.ticksPerDay = 12});
 
   final StockData data;
+  final int ticksPerDay;
 
   @override
   Widget build(BuildContext context) {
@@ -15,9 +16,9 @@ class WatchlistItem extends StatelessWidget {
     final ticks = data.timeSeries.entries.toList();
 
     double growth = 0.0;
-    if (ticks.length >= 24) {
+    if (ticks.length >= ticksPerDay) {
       final today = ticks[0].value.close;
-      final yesterday = ticks[24].value.close;
+      final yesterday = ticks[ticksPerDay].value.close;
       growth = (today - yesterday) / yesterday;
     }
 
@@ -49,7 +50,7 @@ class WatchlistItem extends StatelessWidget {
             ],
           ),
           const SizedBox(width: 10),
-          MinimizedLineGraph(points: ticks.sublist(0, 24), color: color),
+          MinimizedLineGraph(points: ticks.sublist(0, ticksPerDay), color: color),
           const Spacer(),
           Text('\$${ticks[0].value.close.toStringAsFixed(2)}'),
           const OptionButton(),

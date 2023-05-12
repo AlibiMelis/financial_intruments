@@ -10,6 +10,7 @@ class AppColor {
   static const globalBottomNavBackground = Colors.white;
   static const pageHeaderBackground = Colors.white;
   static const shadowColor = Colors.black12;
+  static const linkButton = Colors.blue;
 
   // WATCHLIST
   static const watchlistItemBackground = Colors.white;

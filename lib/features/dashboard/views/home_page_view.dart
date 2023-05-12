@@ -15,10 +15,10 @@ class HomePageView extends StatelessWidget {
       physics: const AlwaysScrollableScrollPhysics(),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: const [
-          DashboardHeader(),
-          GainersLosersWidget(),
-          HomeWatchlist(),
+        children: [
+          const DashboardHeader(),
+          const GainersLosersWidget(),
+          HomeWatchlist(watchlist: watchlist.list),
         ],
       ),
     );

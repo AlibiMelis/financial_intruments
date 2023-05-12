@@ -12,4 +12,8 @@ class AppTextStyle {
     fontSize: 20,
     fontWeight: FontWeight.bold,
   );
+  static const TextStyle seeAllButtonStyle = TextStyle(
+    color: AppColor.linkButton,
+    fontSize: 14,
+  );
 }
