@@ -26,8 +26,9 @@ class StockCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Icon(Icons.money, size: 24),
-          Text(data.metaData?.symbol ?? ''),
+          const Icon(Icons.money, size: 42),
+          Text(data.metaData?.symbol ?? '', style: AppTextStyle.ticker),
+          const SizedBox(height: 6),
           Text(
             data.price.toStringAsFixed(2),
             style: AppTextStyle.absGrowth.copyWith(color: Colors.grey.shade800, fontWeight: FontWeight.bold),

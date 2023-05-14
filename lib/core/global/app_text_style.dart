@@ -28,4 +28,7 @@ class AppTextStyle {
     color: AppColor.secondaryText,
     fontWeight: FontWeight.w600,
   );
+  static const TextStyle ticker = TextStyle(
+    fontWeight: FontWeight.w900,
+  );
 }

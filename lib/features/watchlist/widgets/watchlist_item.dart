@@ -38,7 +38,7 @@ class WatchlistItem extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(symbol),
+              Text(symbol, style: AppTextStyle.ticker),
               Text(
                 '${data.relGrowth.toStringAsFixed(2)}%',
                 style: data.absGrowth > 0 ? AppTextStyle.profitPercentage : AppTextStyle.lossPercentage,
