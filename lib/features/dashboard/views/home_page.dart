@@ -1,3 +1,4 @@
+import 'package:financial_instruments/core/service/stock/cubit/stock_cubit.dart';
 import 'package:financial_instruments/core/service/watchlist/cubit/watchlist_cubit.dart';
 import 'package:financial_instruments/core/utils/extensions.dart';
 import 'package:financial_instruments/features/dashboard/views/home_page_view.dart';
@@ -21,7 +22,10 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return RefreshIndicator(
-      onRefresh: () => context.bloc<WatchlistCubit>().fetchData(),
+      onRefresh: () async {
+        context.bloc<WatchlistCubit>().fetchData();
+        context.bloc<StockCubit>().fetchStockData();
+      },
       child: BlocBuilder<WatchlistCubit, WatchlistState>(
         builder: (context, state) {
           if (state is WatchlistLoaded) {

@@ -18,7 +18,6 @@ class StockCubitImpl extends StockCubit {
 
   @override
   Future<void> fetchStockData() async {
-    
     final data = await repository.fetchStockData(symbols);
     if (data.object != null) {
       final stockData = data.object! as Map<String, StockData>;

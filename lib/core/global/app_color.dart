@@ -13,8 +13,9 @@ class AppColor {
   static const linkButton = Colors.blue;
 
   // WATCHLIST
-  static const watchlistItemBackground = Colors.white;
+  static const itemBackground = Colors.white;
   static const star = Colors.orange;
   static const profit = Colors.green;
   static const loss = Colors.red;
+  static const secondaryText = Colors.grey;
 }

@@ -16,4 +16,16 @@ class AppTextStyle {
     color: AppColor.linkButton,
     fontSize: 14,
   );
+  static const TextStyle profitPercentage = TextStyle(
+    color: AppColor.profit,
+    fontWeight: FontWeight.bold,
+  );
+  static const TextStyle lossPercentage = TextStyle(
+    color: AppColor.loss,
+    fontWeight: FontWeight.bold,
+  );
+  static const TextStyle absGrowth = TextStyle(
+    color: AppColor.secondaryText,
+    fontWeight: FontWeight.w600,
+  );
 }
